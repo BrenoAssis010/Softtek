@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Globalization;
+using Questao1.Entidades;
 
-namespace Questao1 {
+namespace Questao1
+{
     class Program {
         static void Main(string[] args) {
 

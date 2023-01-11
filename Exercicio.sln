@@ -17,7 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Questao4", "Questao4", "{D7
 		Questao4\Questão 4.docx = Questao4\Questão 4.docx
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Questao5", "Questao5\Questao5.csproj", "{7B665AB7-6063-4EA5-A851-E41DBBE01242}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Questao5", "Questao5\Questao5.csproj", "{7B665AB7-6063-4EA5-A851-E41DBBE01242}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Questao1", "Questao1", "{CF555B5D-98C0-44F2-839E-0EDE3C54FAC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Questao2", "Questao2", "{4C51B600-4E0E-468A-86AE-3F7A9C099E67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Questao5", "Questao5", "{806DCB53-69F1-4037-B0AC-117F6E502173}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +46,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24C20B4F-3D90-45C4-84F6-49CBB46DDDB4} = {CF555B5D-98C0-44F2-839E-0EDE3C54FAC8}
+		{6FDF016F-9506-422A-B4CA-E9A401FDDC34} = {4C51B600-4E0E-468A-86AE-3F7A9C099E67}
+		{7B665AB7-6063-4EA5-A851-E41DBBE01242} = {806DCB53-69F1-4037-B0AC-117F6E502173}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6121F46-6A25-480F-A0DF-65FF626EE7B3}
