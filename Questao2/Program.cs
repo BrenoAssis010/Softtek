@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using Questao2.Result;
 
 public class Program
 {
@@ -23,8 +23,30 @@ public class Program
 
     public static int getTotalScoredGoals(string team, int year)
     {
+        string url = $"https://jsonmock.hackerrank.com/api/football_matches?year={year}&team1={team}&";
+        var competition = Task.Run(() => GetUri(new Uri(url)));
+        var result = competition.Result;
+
+        var compettionDeserilializado = Newtonsoft.Json.JsonConvert.DeserializeObject<CompetitionResult>(result);
+
+        var gols = compettionDeserilializado?.Data.Where(x => x.Team1 == team && x.Year == year).Select(x => x.Team1Goals).Sum();
         
-        return 0;
+        return gols ?? 0;
     }
 
+    static async Task<string> GetUri(Uri url)
+    {
+        var response = string.Empty;
+
+        using (var client = new HttpClient())
+        {
+            HttpResponseMessage result = await client.GetAsync(url);
+            if (result.IsSuccessStatusCode)
+            {
+                response = await result.Content.ReadAsStringAsync();
+            }
+        }
+
+        return response;
+    }
 }
