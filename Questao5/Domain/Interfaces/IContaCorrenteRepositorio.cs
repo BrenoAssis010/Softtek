@@ -5,7 +5,7 @@ namespace Questao5.Domain.Interfaces
 {
     public interface IContaCorrenteRepositorio
     {
-        Task<ContaCorrenteEntidade> BuscarContaCorrentePorId(Guid idContaCorrente);
+        Task<ContaCorrenteEntidade> BuscarContaCorrentePorId(string idContaCorrente);
         Task<IEnumerable<ContaCorrenteEntidade>> BuscarSaldoEmConta();
     }
 }

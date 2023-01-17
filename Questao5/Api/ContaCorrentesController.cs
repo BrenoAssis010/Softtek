@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Questao5.Domain.Entities;
+using Questao5.Application.Queries.Requests;
 using Questao5.Domain.Interfaces;
 
 namespace Questao5.Api
@@ -19,29 +19,13 @@ namespace Questao5.Api
         }
 
         [HttpGet]
-        public IActionResult BuscarSaldoEmConta(Guid idContaCorrente)
+        public IActionResult BuscarSaldoEmContaPorId([FromServices] IMediator mediator,
+                                                [FromQuery] FindContaCorrenteByIdRequest command)
         {
-            var conta = _contaCorrenteRepositorio.BuscarContaCorrentePorId(idContaCorrente);
-            var teste = 0;
 
-            if (conta != null)
-            {
-                _movimentoRepositorio.BuscarMovimentacaoEmConta()                
-            }
+            var result = mediator.Send(command);
 
-
-            if (conta == null)
-            {
-                return Ok(0.00M);
-            }
-
-            var credito = conta.Result.Where(x => x.Movimentos.TipoMovimento == Domain.Enumerators.TipoMovimentoEnum.Credito).Select(x => x.Movimentos.Valor).Sum();
-            var debito = conta.Result.Where(x => x.Movimentos.TipoMovimento == Domain.Enumerators.TipoMovimentoEnum.Debito).Select(x => x.Movimentos.Valor).Sum();
-            
-
-            var saldoEmConta = credito - debito;
-
-            return Ok(saldoEmConta);
+            return Ok(result);
         }
     }
 }
