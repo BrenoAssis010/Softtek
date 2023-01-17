@@ -12,7 +12,7 @@ namespace Questao5.Domain.Entities
 
         }
 
-        public MovimentoEntidade(Guid idContaCorrente, TipoMovimentoEnum tipoMovimento, decimal valor)
+        public MovimentoEntidade(string idContaCorrente, TipoMovimentoEnum tipoMovimento, decimal valor)
         {
             IdMovimento = Guid.NewGuid();
             DataMovimento = DateTime.Now;
@@ -27,12 +27,12 @@ namespace Questao5.Domain.Entities
         public TipoMovimentoEnum TipoMovimento { get; private set; }
         public decimal Valor { get; private set; }
 
-        public Guid IdContaCorrente { get; private set; }
+        public string IdContaCorrente { get; private set; }
 
         public ContaCorrenteEntidade ContasCorrentes { get; private set; }
     
     
-        public void Adicionar(Guid idContaCorrente, DateTime dataMovimento, TipoMovimentoEnum tipoMovimento, decimal valor)
+        public void Adicionar(string idContaCorrente, DateTime dataMovimento, TipoMovimentoEnum tipoMovimento, decimal valor)
         {
             IdContaCorrente = idContaCorrente;
             DataMovimento = dataMovimento;

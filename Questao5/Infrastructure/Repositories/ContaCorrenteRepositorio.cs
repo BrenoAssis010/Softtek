@@ -16,7 +16,7 @@ namespace Questao5.Infrastructure.Repositories
             this.databaseConfig = databaseConfig;
         }
 
-        public async Task<ContaCorrenteEntidade> BuscarContaCorrentePorId(Guid idContaCorrente)
+        public async Task<ContaCorrenteEntidade> BuscarContaCorrentePorId(string idContaCorrente)
         {
             using var connection = new SqliteConnection(databaseConfig.Name);
 

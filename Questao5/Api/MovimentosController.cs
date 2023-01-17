@@ -31,13 +31,5 @@ namespace Questao5.Api
 
             return Ok(response.Result);
         }
-
-        [HttpGet]
-        public IActionResult BuscarSaldoEmConta()
-        {
-            var conta = _movimentoRepositorio.BuscarMovimentacaoEmConta();
-
-            return Ok(conta);
-        }
     }
 }
